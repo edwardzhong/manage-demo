@@ -1,0 +1,30 @@
+{% extends './layout.html' %}
+{% block title %}page{% endblock %}
+
+{% block content %}
+    <ol class="breadcrumb">
+      <li><a href="javascript:;">Home</a></li>
+      <li class="active">Page</li>
+    </ol>
+  <h3>Pager</h3>
+  <ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+    <ul class="pager">
+    <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+    <li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+  </ul>
+  <h3>Pagination</h3>
+  <ul class="pagination">
+        <li><a href="#">«</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><span>...</span></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+        <li><a href="#">»</a></li>
+  </ul>
+{% endblock %}

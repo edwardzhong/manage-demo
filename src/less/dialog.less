@@ -1,0 +1,152 @@
+@lightBlue:hsl(198, 73%, 53%);
+@lightGreen:hsl(153, 47%, 49%);
+@gray:hsl(0, 0%, 47%);
+
+.dialog {
+  max-width: 480px;
+  width: 360px;
+  position: fixed;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  z-index: 2000;
+  visibility: hidden;
+  backface-visibility: hidden;
+  perspective: 1300px;
+  &.active{
+    visibility: visible;
+    .dialog-content {
+      opacity: 1;
+      transform: rotateY(0);
+    }
+    ~ .dialog-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.dialog-content {
+  border-radius: 3px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: .5s ease-in-out;
+  opacity: 0;
+  transform-style: preserve-3d;
+  transform: rotateY(-70deg);
+}
+
+.dialog-header {
+  padding: 15px;
+  background:@lightBlue;
+  color: #fff;
+  .close,.close:before{
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.dialog-title {
+  margin: 0;
+  font-size: 2em;
+  text-align: center;
+  font-weight: 200;
+  // line-height: 2em;
+}
+
+.dialog-body {
+  padding: 15px;
+}
+
+.dialog-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dialog-overlay {
+  content: "";
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all .6s;
+}
+
+
+.dialog-wrap{
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  opacity: 0;
+  z-index: 999;
+  transition: all .6s;
+  &.active{
+    opacity: 1;
+    display: block;
+  }
+}
+.info-dialog{
+  position: absolute;
+  width: 320px;
+  max-width: 480px;
+  top: 30%;
+  left: 50%;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  text-align: center;
+  z-index: 1000;
+  .dialog-title{
+    font-size: 18px;
+    padding: 15px;
+    h3{
+      margin: 0;
+    }
+  }
+  .dialog-text{
+    font-size:16px;
+    margin: 0;
+    padding: 15px;
+  }
+
+  .dialog-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    .confirm,.cancel{
+      display: block;
+      font-size: 16px;
+      padding: 0 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .confirm{
+      color: @lightBlue;
+      &:hover{
+        color: darken(@lightBlue,10%);
+      }
+    }
+    .cancel{
+      color: @gray;
+      &:hover{
+        color: darken(@gray,10%);
+      }
+    }
+  }
+}

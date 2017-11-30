@@ -1,0 +1,23 @@
+{% extends './layout.html' %}
+{% block title %}alert{% endblock %}
+
+{% block content %}
+    <ol class="breadcrumb">
+      <li><a href="javascript:;">Home</a></li>
+      <li class="active">Alert</li>
+    </ol>
+    <h3>Alert</h3>
+    <div class="alert alert-success">
+      <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+    </div>
+    <div class="alert alert-info">
+      <i class="close"></i>
+      <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+    </div>
+    <div class="alert alert-warning">
+      <strong>Warning!</strong> Better check yourself, you're <a href="#" class="alert-link">not looking too good</a>.
+    </div>
+    <div class="alert alert-danger">
+      <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+    </div>
+{% endblock %}

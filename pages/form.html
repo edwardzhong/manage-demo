@@ -1,0 +1,70 @@
+{% extends './layout.html' %}
+{% block title %}form{% endblock %}
+
+{% block content %}
+    <ol class="breadcrumb">
+      <li><a href="javascript:;">Home</a></li>
+      <li class="active">Form</li>
+    </ol>
+    <h3>默认表单</h3>
+    <form class="form">
+      <fieldset>
+        <legend>A simple single line form</legend>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+
+        <label for="remember">
+          <input id="remember" type="checkbox"> 记住我
+        </label>
+
+        <button type="submit" class="button button-primary">登录</button>
+      </fieldset>
+    </form>
+    <h3>对齐式</h3>
+    <form class="form form-aligned">
+      <fieldset>
+        <div class="control-group">
+          <label for="name">Username</label>
+          <input id="name" type="text" placeholder="Username">
+        </div>
+
+        <div class="control-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Password">
+        </div>
+
+        <div class="control-group">
+          <label for="email">Email Address</label>
+          <input id="email" type="email" placeholder="Email Address">
+        </div>
+
+        <div class="control-group">
+          <label for="foo">Supercalifragilistic Label</label>
+          <input id="foo" type="text" placeholder="Enter something here...">
+        </div>
+
+        <div class="controls">
+          <label for="cb" class="checkbox">
+            <input id="cb" type="checkbox"> I've read the terms and conditions
+          </label>
+
+          <button type="submit" class="button button-primary">Submit</button>
+        </div>
+      </fieldset>
+    </form>
+    <h3>input分组</h3>
+    <form class="form">
+    <fieldset class="group">
+      <input type="text" class="input-1-2" placeholder="Username">
+        <input type="text" class="input-1-2" placeholder="Password">
+        <input type="email" class="input-1-2" placeholder="Email">
+      </fieldset>
+
+      <fieldset class="group">
+      <input type="text" class="input-1-2" placeholder="A title">
+        <textarea class="input-1-2" placeholder="Textareas work too"></textarea>
+      </fieldset>
+
+      <button type="submit" class="button input-1-2 button-primary">Sign in</button>
+    </form>
+{% endblock %}

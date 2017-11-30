@@ -1,0 +1,34 @@
+{% extends './layout.html' %}
+{% block title %}button{% endblock %}
+{% block content %}
+    <ol class="breadcrumb">
+      <li><a href="javascript:;">Home</a></li>
+      <li class="active">Button</li>
+    </ol>
+    <div class="wrap">
+      <h3>default button</h3>
+      <a class="button button-disabled" href="javascript:;">Disabled Button</a>
+      <button class="button button-active">Active Button</button>
+    </div>
+    <div class="wrap">
+      <h3>buttons</h3>
+      <a class="button button-primary" href="javascript:;">Primary Button</a>
+      <button class="button button-info">Info Button</button>
+      <button class="button button-success">Success Button</button>
+      <button class="button button-danger">danger Button</button>
+      <button class="button button-warning">warning Button</button>
+    </div>
+    <div class="wrap">
+      <h3>button-small and button-large</h3>
+      <button class="button button-info button-small">small button</button>
+      <button class="button button-info button-large">large button</button>
+    </div>
+    <div class="wrap">
+     <h3>button-group</h3>
+     <div class="button-group">
+      <button class="button button-danger">danger</button>
+      <button class="button button-warning">warning</button>
+      <button class="button button-success">success</button>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>manage-demo</title>
+  <link rel="stylesheet" href="./lib/base.min.css">
+  <link rel="stylesheet" href="./lib/fontello/fontello.css">
+  <link rel="stylesheet" href="./lib/raleway/raleway.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <div class="content">
+      <header class="header">
+        <a class="logo" href="./"><i class="icon-header"></i><h1>Manage-Demo</h1></a>
+        <div class="header-right">
+          <ul>
+            <li class="msg">
+              <div>
+                <i class="icon-mail"></i>
+                <span class="count">10</span>
+              </div>
+              <div class="detail msg-detail">
+                <header>you had receive 10 message</header>
+                <ul>
+                  <li><a href="javascript:;">aaaaaa</a></li>
+                  <li><a href="javascript:;">bbbbbbb</a></li>
+                  <li><a href="javascript:;">ccccccc</a></li>
+                  <li><a href="javascript:;">aaaaaa</a></li>
+                  <li><a href="javascript:;">bbbbbbb</a></li>
+                  <li><a href="javascript:;">ccccccc</a></li>
+                  <li><a href="javascript:;">aaaaaa</a></li>
+                  <li><a href="javascript:;">bbbbbbb</a></li>
+                  <li><a href="javascript:;">ccccccc</a></li>
+                  <li><a href="javascript:;">aaaaaa</a></li>
+                  <li><a href="javascript:;">bbbbbbb</a></li>
+                  <li><a href="javascript:;">ccccccc</a></li>
+                </ul>
+                <footer>
+                  <a href="javascript:;">view all messeage</a>
+                </footer>
+              </div>
+            </li><li class="profile">
+            <div class="avatar">
+              <img src="./img/avatar.jpg" alt="">
+            </div>
+            <span class="user-name">Jeff Zhong</span>
+            <div class="detail user-detail">
+              <div class="con">
+                <div class="avatar"><img src="./img/avatar.jpg" alt=""></div>
+                <a class="user-link" href="https://github.com/edwardzhong/">Jeff Zhong</a>
+                <p>Web developer</p>
+              </div>
+              <footer class="clearfix">
+                <a class="fl" href="javascript:;">Profile</a>
+                <a class="fr" href="./sign.html">Sign out</a>
+              </footer>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="header-middle">
+        <a id="pushMenu"class="push-menu" href="javascript:;"><i class="icon-menu"></i></a>
+      </div>
+    </header>
+    <aside class="menu-wrap">
+      <ul id="menuList" class="side-menu">
+        <li>
+          <a data-type="tab" title="Vue Sample" href="./vue.html"><i class="icon-code"></i><span>Vue Sample</span></a>
+        </li>
+        <li class="children">
+          <a data-type="tab" title="Html Component" href="javascript:;"><i class="icon-doc-text"></i><span>Html Component</span></a>
+          <ul>
+            <li>
+              <a data-type="tab" title="Grid" href="./pages/grid.html"><span> Grid</span></a>
+            </li>
+            <li>
+              <a data-type="tab" title="Button" href="./pages/button.html"><span> Button</span></a>
+            </li>
+            <li>
+              <a data-type="tab" title="Form" href="./pages/form.html"><span> Form</span></a>
+            </li>
+            <li>
+              <a data-type="tab" title="Dialog" href="./pages/dialog.html"><span> Dialog</span></a>
+            </li>
+            <li>
+              <a data-type="tab" title="Table" href="./pages/table.html"><span> Table</span></a>
+            </li>
+            <li>
+              <a data-type="tab" title="Menu" href="./pages/menu.html"><span> Menu</span></a>
+            </li>
+            <li>
+              <a data-type="tab" title="Alert" href="./pages/alert.html"><span> Alert</span></a>
+            </li>
+            <li>
+              <a data-type="tab" title="Page" href="./pages/page.html"><span> Page</span></a>
+            </li>
+            <li>
+              <a data-type="tab" title="Panel" href="./pages/panel.html"><span> Panel</span></a>
+            </li>
+            <li>
+              <a data-type="tab" title="Radio & Checkbox" href="./pages/checkbox.html"><span> Radio & Checkbox</span></a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a data-type="tab" title="Canvas Chart" href="./pages/chart.html"><i class="icon-picture"></i><span> Cavans Chart</span></a>
+        </li>
+        <li>
+          <a title="Web App" href="http://jeffzhong.space/sites/webapp/"><i class="icon-font"></i><span>Web App</span></a>
+        </li>
+        <li>
+          <a title="Effect Demo" href="http://jeffzhong.space/sites/demo/"><i class="icon-file-image"></i><span>Effect Demo</span></a>
+        </li>
+        <li>
+          <a title="My Blog" href="http://jeffzhong.space/"><i class="icon-bookmark"></i><span>My Blog</span></a>
+        </li>
+      </ul>
+    </aside>
+    <div id="main" class="main">
+      <nav class="nav">
+        <ul id="nav" class="menu-tabs"></ul>
+      </nav>
+      <div class="page-con"></div>
+    </div>
+    <footer class="footer">
+      <p>copyright &copy; 2017 <a href="https://github.com/edwardzhong">Jeff Zhong</a></p>
+    </footer>
+  </div>
+<script src="./lib/jquery.min.js"></script>
+<script>
+    var $nav= $('#nav'),
+        $navParent= $nav.parent(),
+        lh=$('#menuList').find('li').first().height();
+
+    // 导航栏隐藏／显示
+    $('#pushMenu').on('click',function(){
+      $('.content').toggleClass('hide-nav');
+      setTabWidth();
+    });
+
+    //存在则激活tab, 否则新建tab 
+    function clickMenu(url,txt){
+      var i=-1;
+      $nav.find('li').each(function(index, el) {
+        if($(this).attr('data-txt')==txt){
+          i=index;
+          return false;
+        }
+      });
+      if(i>-1){
+        selectTab(i);
+      } else {
+        appendTab(txt);
+        appendPage(url);
+      }
+    }
+    //添加页面
+    function appendPage(url){
+      $('.page-con .page').removeClass('active');
+      $('.page-con').append('<div class="page active"><iframe src="'+url+'" frameborder="0" width="100%" height="100%"></iframe></div>');
+    }
+    
+    //添加tab
+    function appendTab(txt){
+      $nav.find('li').removeClass('active');
+      $nav.append('<li data-txt="'+txt+'" class="active"><a href="javascript:;">'+txt+'<i class="close">×</i></a></li>');
+      var w=setTabWidth();
+      //移动到新增tab
+      $navParent.animate({'scrollLeft':w+'px'},600); 
+    }
+
+    //选择下一个tab
+    function selectNext(i){
+      var len=$nav.find('li').length;
+      if(len<=1) return;
+      selectTab(i>0?i-1:i+1);
+    }
+
+    //选择tab
+    function selectTab(index){
+      var selTab=$nav.find('li').eq(index),
+          selTabLeft=selTab.position().left,
+          tabWrapWidth=$navParent.width();
+
+        selTab.addClass('active').siblings('.active').removeClass('active');
+        $('.page-con .page').eq(index).addClass('active').siblings('.active').removeClass('active');
+        
+        //不在tab栏显示范围则滚动到可视范围内
+        if(selTabLeft<0||selTabLeft>tabWrapWidth){
+          $navParent.animate({ scrollLeft: selTabLeft }, 600);
+        }
+    }
+
+    // 选择导航菜单
+    $('#menuList').on('click','a',function(e){
+      var $li=$(this).parent(),
+          cul=$li.find('ul');
+
+      if($(this).attr('data-type')!='tab')return;
+      e.preventDefault();
+
+      //有子菜单
+      if($li.hasClass('children')){
+        if($li.hasClass('active')){
+          $li.removeClass('active');
+          cul.css('height',0);
+          return;
+        } else{
+          var h=cul.find('li').length*lh;
+          cul.css('height',h+'px');
+        }
+      }
+
+      $li.addClass('active').siblings('.active').removeClass('active');
+      if($li.hasClass('children')) return;
+      var url=$(this).attr('href'),
+          txt=$.trim($(this).attr('title'));
+      clickMenu(url,txt);
+    });
+
+    // 选择tab
+    $nav.on('click','li',function(){
+      if($(this).hasClass('active')) return;
+      var index =$(this).index();
+      selectTab(index);
+    });
+
+    // 关闭tab
+    $nav.on('click','.close',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var $li=$(this).parent().parent(),
+          index =$li.index();
+      if($li.hasClass('active')){
+        selectNext(index);
+      }
+      $li.remove();
+      $('.page-con .page').eq(index).remove();
+      setTabWidth();
+    });
+
+    //设置导航列表宽度
+    function setTabWidth(){
+      var w=0;
+      var pw=$navParent.width();
+      $nav.find('li').each(function(i,item){
+        w+=$(item).outerWidth(true);
+      });
+      w=Math.max(w+10,pw);
+      $nav.css('width',w+'px');
+      return w;
+    }
+
+    function setWidth(){
+      var winWidth=$(window).width();
+      if(winWidth<769){
+        $('.content').addClass('hide-nav');
+      }
+    }
+
+    //设置高度
+    function setHeight(){
+      var winHeight=$(window).height(),
+          headerHeight=$('.header').height(),
+          footerHeight=$('.footer').height(),
+          navHeight=$('.nav').outerHeight();
+      $('.page-con').height(winHeight-headerHeight-navHeight-footerHeight);
+    }
+    function windowResize(){
+      setHeight();
+      setTabWidth();
+      setWidth();
+    }
+    windowResize();
+    $(window).on('resize',windowResize);
+
+    //选择第一项
+    $('#menuList a').first().click();
+</script>
+</body>
+</html>

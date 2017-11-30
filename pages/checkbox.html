@@ -1,0 +1,28 @@
+{% extends './layout.html' %}
+{% block title %}checkbox{% endblock %}
+{% block content %}
+    <ol class="breadcrumb">
+      <li><a href="javascript:;">Home</a></li>
+      <li class="active">checkbox</li>
+    </ol>
+    <h3>checkbox & radio & switch</h3>
+    <div class="box-wrap">
+    <label for="">Gender</label>
+    <input type="radio" name="gender" id="male" class="radio" checked>
+    <label for="male">male</label>
+    <input type="radio" name="gender" id="female" class="radio">
+    <label for="female">female</label>
+    </div>
+    <div class="box-wrap">
+      <label for="remember">Remember me</label><input type="checkbox" name="" id="remember" class="checkbox" checked>
+    </div>
+    <div class="box-wrap">
+      <label for="hide">Hide location</label><input type="checkbox" name="" id="hide" class="checkbox">
+    </div>
+    <div class="box-wrap">
+      <label for="switch">Switch off</label><input type="checkbox" name="" id="switch" class="switch">
+    </div>
+    <div class="box-wrap">
+      <label for="switch">Switch on</label><input type="checkbox" name="" id="switch" class="switch" checked>
+    </div>
+{% endblock %}

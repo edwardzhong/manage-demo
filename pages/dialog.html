@@ -1,0 +1,69 @@
+{% extends './layout.html' %}
+{% block title %}dialog{% endblock %}
+{% block js %}
+    <script>
+    var modal=document.getElementById('modal'),
+        overlay=document.getElementById('overlay'),
+        body=document.body;
+
+    function show(){
+        modal.style.display='block';
+        overlay.style.display='block';
+        body.className='modal-open';
+        setTimeout(function() {
+            modal.className='modal fade in';
+            overlay.className='modal-backdrop fade in';
+        }, 50);
+    }
+
+    function hide(){
+        modal.className='modal fade';
+        overlay.className='modal-backdrop fade';
+        body.className='';
+        setTimeout(function() {
+            modal.style.display='';
+            overlay.style.display='none';
+
+        }, 300);
+    }
+
+    document.getElementById('show').onclick=show;
+    document.getElementsByClassName('close')[0].onclick=hide;
+    document.getElementById('close').onclick=hide;
+    </script>
+{% endblock %}
+{% block content %}
+    <ol class="breadcrumb">
+      <li><a href="javascript:;">Home</a></li>
+      <li class="active">Dialog</li>
+    </ol>
+    <button class="button button-info" id="show">show dialog</button>
+    <div id="modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close">×</button>
+                    <h4 class="modal-title">New message to @fat</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form form-stacked">
+                        <label for="recipient-name" class="control-label">Recipient:</label>
+                        <input class="input-1" type="text" id="recipient-name">
+                        <label for="message-text" class="control-label">Message:</label>
+                        <textarea class="input-1" id="message-text"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+<!--                     <div class="button-group">
+                        <button class="button button-primary">确定</button>
+                        <button class="button button-danger">关闭</button>
+                        <button class="button button-warning">取消</button>
+                    </div>
+ -->                <button id="close" type="button" class="button">Close</button>
+                    <button type="button" class="button button-primary">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay" class="modal-backdrop fade" style="display: none;"></div>
+{% endblock %}

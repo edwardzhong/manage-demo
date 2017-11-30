@@ -1,0 +1,93 @@
+{% extends './layout.html' %}
+{% block title %}menu{% endblock %}
+
+{% block content %}
+    <ol class="breadcrumb">
+      <li><a href="javascript:;">Home</a></li>
+      <li class="active">Menu</li>
+    </ol>
+
+    <div class="wrap">
+      <h3>menu-tabs</h3>
+      <ul class="menu-tabs justified bordered">
+        <li><a href="#">Home</a></li>
+        <li class="active"><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="wrap">
+      <h3>default menu</h3>
+      <div class="menu custom-restricted-width">
+        <span class="menu-heading">Yahoo Sites</span>
+        <ul class="menu-list">
+          <li class="menu-item"><a href="#" class="menu-link">Flickr</a></li>
+          <li class="menu-item"><a href="#" class="menu-link">Sports</a></li>
+          <li class="menu-heading">More Sites</li>
+          <li class="menu-item"><a href="#" class="menu-link">News</a></li>
+          <li class="menu-item"><a href="#" class="menu-link">OMG!</a></li>
+        </ul>
+      </div>
+    </div>
+      <div class="wrap">
+        <h3>menu-horizontal</h3>
+        <div class="menu menu-horizontal">
+          <ul class="menu-list">
+            <li class="menu-item menu-selected"><a href="#" class="menu-link">Home</a></li>
+            <li class="menu-item menu-has-children menu-allow-hover">
+              <a href="#" id="menuLink1" class="menu-link">Contact</a>
+              <ul class="menu-children">
+                <li class="menu-item"><a href="#" class="menu-link">Email</a></li>
+                <li class="menu-item"><a href="#" class="menu-link">Twitter</a></li>
+                <li class="menu-item"><a href="#" class="menu-link">Tumblr Blog</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <h3>menu-horizontal menu-scrollable</h3>
+        <div class="menu menu-horizontal menu-scrollable">
+          <a href="#" class="menu-link menu-heading">Yahoo</a>
+          <ul class="menu-list">
+            <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Flickr</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Messenger</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Sports</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Finance</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Autos</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Beauty</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Movies</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Small Business</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Cricket</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Tech</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">World</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">News</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <h3>menu-scrollable</h3>
+        <div class="menu menu-scrollable custom-restricted">
+          <a href="#" class="menu-link menu-heading">Yahoo</a>
+          <ul class="menu-list">
+            <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Flickr</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Messenger</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Sports</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Finance</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Autos</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Beauty</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Movies</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Small Business</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Cricket</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Tech</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">World</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">News</a></li>
+            <li class="menu-item"><a href="#" class="menu-link">Support</a></li>
+          </ul>
+        </div>
+      </div>
+{% endblock %}

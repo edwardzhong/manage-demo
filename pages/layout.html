@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="../lib/fontello/fontello.css">
+  <link rel="stylesheet" href="../lib/raleway/raleway.css">
+  <link rel="stylesheet" href="../lib/base.min.css">
+  <link rel="stylesheet" href="../css/page.css">
+  {% block css %}{% endblock %}
+</head>
+<body>
+  <div class="page-main" id="main">
+  {% autoescape false %}
+  {% block content %}{% endblock %}
+  {% endautoescape %}
+  </div>
+{% block js %}{% endblock %}
+</body>
+</html>
