@@ -2,6 +2,7 @@
 ### 使用
 1. pages目录建立页面
 2. index.html导航栏配置链接
+3. 已经配置好了vue的webpack配置文件，直接在src文件夹里面开发vue项目
 
 ### 运行
 ```bash
